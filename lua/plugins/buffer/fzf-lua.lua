@@ -45,13 +45,13 @@ return {
 	},
 	opts = function()
 		return {
-			-- winopts = { split = "botright new" }, -- this cause error
-			winopts = { -- this is floating window setting
-				row = 0.95, -- window row position (0=top, 1=bottom)
-				col = 0.00, -- window col position (0=left, 1=right),
-				height = 0.60, -- window height
-				width = 1.00, -- window width
-			},
+			winopts = { split = "botright new" }, -- this cause error
+			-- winopts = { -- this is floating window setting
+			-- 	row = 0.95, -- window row position (0=top, 1=bottom)
+			-- 	col = 0.00, -- window col position (0=left, 1=right),
+			-- 	height = 0.60, -- window height
+			-- 	width = 1.00, -- window width
+			-- },
 			oldfiles = { include_current_session = true },
 			keymap = {
 				fzf = {
