@@ -135,8 +135,6 @@ return {
 		{ mode = { "o", "x" }, "ic", ":<C-U>Gitsigns select_hunk<CR>", { desc = "hunk txtobj" } }, -- Text object
 	},
 	opts = function()
-		local wk = require("which-key")
-		wk.register({ ["<localleader>h"] = { "git-signs" } })
 		local M = {
 			count_chars = { "", "󰬻", "󰬼", "󰬽", "󰬾", "󰬿", "󰭀", "󰭁", "󰭂", ["+"] = "󰿮" },
 			signs = {

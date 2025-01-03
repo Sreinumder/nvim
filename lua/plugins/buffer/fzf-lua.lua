@@ -3,7 +3,7 @@ return {
 	lazy = true,
 	event = "UIEnter",
 	keys = {
-		{ mode = "n", "<leader>bb", "<cmd>FzfLua buffers<CR>", { desc = "find buffers" } },
+		{ mode = "n", "<leader>f<tab>", "<cmd>FzfLua buffers<CR>", { desc = "find buffers" } },
 		{ mode = "n", "?", "<cmd>FzfLua blines previewer=false<CR>", { desc = "find buffers" } },
 		{
 			mode = "n",

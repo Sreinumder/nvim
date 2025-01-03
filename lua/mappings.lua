@@ -136,6 +136,8 @@ map("x", "<A-g><A-e>", '"bdge"bp`[v`]', { desc = "move selection with ge" })
 map("x", "<A-g><A-E>", '"bdgE"bp`[v`]', { desc = "move selection with gE" })
 map("x", "<A-g><A-g>", '"bdgg"bp`[v`]', { desc = "move selection with gg" })
 map("x", "<A-G>", '"bdG"bp`[v`]', { desc = "move selection with G" })
+map("x", "<A-{>", '"bd{"bp`[v`]', { desc = "move selection with {" })
+map("x", "<A-}>", '"bd}"bp`[v`]', { desc = "move selection with }" })
 
 -- simple hacks
 -- map("n", "<leader>ql", "<cmd>lopen<cr>", { desc = "Location List" })

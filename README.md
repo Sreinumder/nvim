@@ -1,44 +1,47 @@
 <h1 align="center">Rise's PDE</h1>
+This is always WIP.
 
+<h2 align="center">keymaps</h2>
 <table>
+  <tr> <th>Key</th> <th>Usage</th> </tr>
   <tr>
-    <th>Key</th>
-    <th>Usage</th>
-  </tr>
-  <tr>
-    <td><code>h</code></td>
+    <td>h</td>
     <td>Move Left</td>
   </tr>
   <tr>
-    <td><code>j</code></td>
+    <td>j</td>
     <td>Move Down</td>
   </tr>
   <tr>
-    <td><code>k</code></td>
+    <td>k</td>
     <td>Move Up</td>
   </tr>
   <tr>
-    <td><code>l</code></td>
+    <td>l</td>
     <td>Move Right</td>
   </tr>
   <tr>
-    <td><code>s</code></td>
-    <td>Search</td>
+    <td>space</td>
+    <td>leader</td>
   </tr>
   <tr>
-    <td><code>&lt;localleader&gt;</code></td>
-    <td>Toggler for Local Custom Commands</td>
+    <td>;</td>
+    <td>local-leader</td>
   </tr>
   <tr>
-    <td><code>&lt;leader&gt;</code></td>
-    <td>Toggler for Global Custom Commands</td>
+    <td>s</td>
+    <td>substitute</td>
   </tr>
   <tr>
-    <td><code>&lt;Home&gt;</code></td>
+    <td>H</td>
     <td>Start of Line</td>
   </tr>
   <tr>
-    <td><code>&lt;End&gt;</code></td>
+    <td>L</td>
     <td>End of Line</td>
+  </tr>
+  <tr>
+    <td>M</td>
+    <td>Middle of Line</td>
   </tr>
 </table>
