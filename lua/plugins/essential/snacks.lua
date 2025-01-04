@@ -1,12 +1,44 @@
 return {
 	"folke/snacks.nvim",
+	dependencies = {
+		"HiPhish/rainbow-delimiters.nvim",
+	},
 	priority = 1000,
 	lazy = false,
-	---@type snacks.Config
 	opts = {
 		bigfile = { enabled = true },
 		dashboard = { enabled = true },
-		indent = { enabled = true },
+		indent = {
+			indent = { enabled = true }, -- indent guides
+			animate = {
+				enabled = vim.fn.has("nvim-0.10") == 1,
+				style = "out",
+				easing = "linear",
+				duration = {
+					step = 20, -- ms per step
+					total = 500, -- maximum duration
+				},
+			},
+			scope = {
+				enabled = true, -- enable highlighting the current scope
+				char = "│",
+				underline = false, -- underline the start of the scope
+				only_current = false, -- only show scope in the current window
+				hl = {
+					"RainbowDelimiterGreen",
+					"RainbowDelimiterOrange",
+					"RainbowDelimiterBlue",
+					"RainbowDelimiterRed",
+					"RainbowDelimiterYellow",
+					"RainbowDelimiterViolet",
+					"RainbowDelimiterCyan",
+				},
+			},
+			-- filter for buffers to enable indent guides
+			filter = function(buf)
+				return vim.g.snacks_indent ~= false and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == ""
+			end,
+		},
 		input = { enabled = true },
 		notifier = {
 			enabled = true,
@@ -31,7 +63,7 @@ return {
 				keep = function(notif)
 					return vim.fn.getcmdpos() > 0
 				end,
-				style = "compact",
+				style = "round",
 				top_down = true, -- place notifications from top to bottom
 				date_format = "%R", -- time format for notifications
 				more_format = " ↓ %d lines ",
@@ -42,31 +74,6 @@ return {
 		scroll = { enabled = false },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
-		lazygit = {
-			configure = true,
-			config = {
-				os = { editPreset = "nvim-remote" },
-				gui = {
-					-- set to an empty string "" to disable icons
-					nerdFontsVersion = "3",
-				},
-			},
-			theme_path = vim.fs.normalize(vim.fn.stdpath("cache") .. "/lazygit-theme.yml"),
-			theme = {
-				[241] = { fg = "Special" },
-				activeBorderColor = { fg = "MatchParen", bold = true },
-				cherryPickedCommitBgColor = { fg = "Identifier" },
-				cherryPickedCommitFgColor = { fg = "Function" },
-				defaultFgColor = { fg = "Normal" },
-				inactiveBorderColor = { fg = "FloatBorder" },
-				optionsTextColor = { fg = "Function" },
-				searchingActiveBorderColor = { fg = "MatchParen", bold = true },
-				selectedLineBgColor = { bg = "Visual" }, -- set to `default` to have no background colour
-				unstagedChangesColor = { fg = "DiagnosticError" },
-			},
-			win = {
-				style = "lazygit",
-			},
-		},
+		lazygit = { enabled = true },
 	},
 }

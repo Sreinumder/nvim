@@ -21,13 +21,13 @@ return {
 				lua = 210,
 			},
 			highlight = {
-				"RainbowDelimiterRed",
-				"RainbowDelimiterYellow",
-				"RainbowDelimiterBlue",
-				"RainbowDelimiterOrange",
 				"RainbowDelimiterGreen",
-				"RainbowDelimiterViolet",
+				"RainbowDelimiterBlue",
+				"RainbowDelimiterYellow",
 				"RainbowDelimiterCyan",
+				"RainbowDelimiterOrange",
+				"RainbowDelimiterRed",
+				"RainbowDelimiterViolet",
 			},
 		}
 	end,

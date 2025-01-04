@@ -6,7 +6,7 @@ return {
 	version = "*",
 	opts = {
 		buffer = { suffix = "b", options = {} },
-		comment = { suffix = "c", options = {} },
+		comment = { suffix = "g", options = {} },
 		conflict = { suffix = "x", options = {} },
 		diagnostic = { suffix = "d", options = {} },
 		file = { suffix = "f", options = {} },
