@@ -25,12 +25,12 @@ return {
 		{ "<A-W>", "<Cmd>BufferRestore<CR>", { desc = "buffer restore" } },
 		{ "<leader><tab>", "<Cmd>BufferPick<CR>", { desc = "buffer pick" } },
 		{ "<leader><A-w>", "<Cmd>BufferPickDelete<CR>", { desc = "buffer pick delete" } },
-		{ "<A-1>", "<Cmd>BufferGoto 1<CR>", { desc = "goto tab 1" } },
-		{ "<A-2>", "<Cmd>BufferGoto 2<CR>", { desc = "goto tab 2" } },
-		{ "<A-3>", "<Cmd>BufferGoto 3<CR>", { desc = "goto tab 3" } },
-		{ "<A-4>", "<Cmd>BufferGoto 4<CR>", { desc = "goto tab 4" } },
-		{ "<localleader>b", "<Cmd>BufferPin<CR>", { desc = "buffer pin" } },
-		{ "<leader>b", "<Cmd>BufferGotoPinned<CR>", { desc = "buffer pinned" } },
+		-- { "<A-1>", "<Cmd>BufferGoto 1<CR>", { desc = "goto tab 1" } },
+		-- { "<A-2>", "<Cmd>BufferGoto 2<CR>", { desc = "goto tab 2" } },
+		-- { "<A-3>", "<Cmd>BufferGoto 3<CR>", { desc = "goto tab 3" } },
+		-- { "<A-4>", "<Cmd>BufferGoto 4<CR>", { desc = "goto tab 4" } },
+		-- { "<localleader>b", "<Cmd>BufferPin<CR>", { desc = "buffer pin" } },
+		-- { "<leader>b", "<Cmd>BufferGotoPinned<CR>", { desc = "buffer pinned" } },
 		-- { "<localleader>bpp", "<Cmd>BufferGotoUnpinned<CR>", { desc = "buffer unpinned" } },
 
 		--            :BufferCloseAllButCurrent
