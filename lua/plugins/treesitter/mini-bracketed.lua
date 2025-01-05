@@ -1,7 +1,6 @@
 -- jump to stuff
 return {
 	"echasnovski/mini.bracketed",
-	event = "UIEnter",
 	keys = { "[", "]" },
 	version = "*",
 	opts = {
