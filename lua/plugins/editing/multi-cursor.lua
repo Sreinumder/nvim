@@ -88,9 +88,22 @@ return {
 			-- Clone every cursor and disable the originals.
 			{ mode = { "n", "v" }, "<leader><c-q>", mc.duplicateCursors },
 
-			{
+      {
 				mode = "n",
 				"<C-esc>",
+				function()
+					if not mc.cursorsEnabled() then
+						mc.enableCursors()
+					elseif mc.hasCursors() then
+						mc.clearCursors()
+					else
+						-- Default <esc> handler.
+					end
+				end,
+			},
+			{
+				mode = "n",
+				";<esc>",
 				function()
 					if not mc.cursorsEnabled() then
 						mc.enableCursors()
