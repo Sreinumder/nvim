@@ -1,7 +1,7 @@
 local options = {
 	base46 = {
 		theme = "everblush",
-		transparency = false,
+		transparency = true,
 		theme_toggle = { "everblush", "one_light" },
 	},
 

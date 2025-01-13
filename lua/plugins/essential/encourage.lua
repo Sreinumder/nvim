@@ -1,5 +1,7 @@
+-- "encourage.nvim"
 return {
 	"r-cha/encourage.nvim",
+  enabled = false,
 	event = { "BufWrite" },
 	opts = {
 		messages = {
