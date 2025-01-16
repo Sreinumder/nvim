@@ -1,7 +1,13 @@
 return {
   "echasnovski/mini.files",
+  enabled = false,
   keys = {
-    { "<leader>ee", function() require('mini.files').setup() end }
+    {
+      "<leader>ee",
+      function()
+        require("mini.files").setup()
+      end,
+    },
   },
   opts = {
     content = {
@@ -11,19 +17,19 @@ return {
     },
 
     mappings = {
-      close       = 'q',
-      go_in       = 'l',
-      go_in_plus  = 'L',
-      go_out      = 'h',
-      go_out_plus = 'H',
-      mark_goto   = "'",
-      mark_set    = 'm',
-      reset       = '<BS>',
-      reveal_cwd  = '@',
-      show_help   = 'g?',
-      synchronize = '=',
-      trim_left   = '<',
-      trim_right  = '>',
+      close = "q",
+      go_in = "l",
+      go_in_plus = "L",
+      go_out = "h",
+      go_out_plus = "H",
+      mark_goto = "'",
+      mark_set = "m",
+      reset = "<BS>",
+      reveal_cwd = "@",
+      show_help = "g?",
+      synchronize = "=",
+      trim_left = "<",
+      trim_right = ">",
     },
 
     -- General options
@@ -45,5 +51,5 @@ return {
       -- Width of preview window
       width_preview = 25,
     },
-  }
+  },
 }

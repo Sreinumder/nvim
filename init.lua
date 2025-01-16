@@ -1,47 +1,62 @@
-vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46/"
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.g.mapleader = " "
 vim.g.maplocalleader = ";"
-
-vim.cmd("autocmd BufEnter * set formatoptions-=cro")
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.uv.fs_stat(lazypath) then
-	local repo = "https://github.com/folke/lazy.nvim.git"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
 end
 vim.opt.rtp:prepend(lazypath)
-local lazy_config = require("lazy-config")
 
+require("hacks")
 require("abbrev")
-require("filetype")
-require("globals")
-if vim.g.started_by_firenvim == true then --firenvim
-	require("firenvim")
-elseif vim.g.vscode then --vscode
-	require("vscode")
-else
-	if vim.g.pluginless ~= 1 then
-		local plugins = {
-			{ import = "nvchad.plugins" },
-			{ import = "plugins.ui" },
-			{ import = "plugins.lsp" },
-			{ import = "plugins.note" },
-			{ import = "plugins.buffer" },
-			{ import = "plugins.editing" },
-			{ import = "plugins.essential" },
-			{ import = "plugins.treesitter" },
-			{ import = "plugins.git+others" },
-			{ import = "plugins.tools" },
-			{ import = "plugins.my-plugins" },
-		}
-		require("lazy").setup(plugins, lazy_config)
-	end
-	dofile(vim.g.base46_cache .. "defaults")
-	dofile(vim.g.base46_cache .. "statusline")
-	require("options")
-	require("mappings")
-	require("hacks")
-end
-vim.schedule(function()
-	require("mappings")
-	require("autocmd")
-end)
+require("autocmd")
+require("lazy").setup({
+  spec = {
+    -- add LazyVim and import its plugins
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { import = "plugins.disabled" },
+    { import = "plugins.ui" },
+    { import = "plugins.note" },
+    { import = "plugins.buffer" },
+    { import = "plugins.editing" },
+    { import = "plugins.essential" },
+    { import = "plugins.treesitter" },
+    { import = "plugins.git+others" },
+    { import = "plugins.tools" },
+    { import = "plugins.my-plugins" },
+  },
+  defaults = {
+    lazy = true,
+    version = false,
+  },
+  install = { colorscheme = { "tokyonight", "habamax" } },
+  checker = {
+    enabled = true, -- check for plugin updates periodically
+    notify = false, -- notify on update
+  }, -- automatically check for plugin updates
+  performance = {
+    rtp = {
+      -- disable some rtp plugins
+      disabled_plugins = {
+        "gzip",
+        -- "matchit",
+        -- "matchparen",
+        -- "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
+})
