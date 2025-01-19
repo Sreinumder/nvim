@@ -17,7 +17,7 @@ require("globals")
 if vim.g.started_by_firenvim == true then --firenvim
 	require("firenvim")
 elseif vim.g.vscode then --vscode
-	require("vscode")
+	require("vscodium")
 else
 	if vim.g.pluginless ~= 1 then
 		local plugins = {

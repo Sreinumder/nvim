@@ -104,8 +104,13 @@ map(
 
 -- bash filter trans
 map("n", "<leader>rt", '"tyy"tp"tp0d}k!!trans -t  -b<C-Left><Left>', { desc = "translate filter append" })
-map("n", "<leader>rs", '"byy"bp"bp0d}k!!sh<cr>', { desc = "bash filter append" })
-map("n", "<leader>rS", "!!sh<cr>", { desc = "bash filter replace" })
+if vim.fn.has("win32") ~= 0 then
+  map("n", "<leader>rs", '"byy"bp"bp0d}k!!powershell<cr>', { desc = "bash filter append" })
+  map("n", "<leader>rS", "!!powershell<cr>", { desc = "bash filter replace" })
+else
+  map("n", "<leader>rs", '"byy"bp"bp0d}k!!sh<cr>', { desc = "bash filter append" })
+  map("n", "<leader>rS", "!!sh<cr>", { desc = "bash filter replace" })
+end
 
 -- niche visual selection hacks
 map("x", "<A-x>", '<esc>"_x`<"_xv`>h', { desc = "delete surrounding of visual mode" })
