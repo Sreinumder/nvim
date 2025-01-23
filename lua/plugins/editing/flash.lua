@@ -10,7 +10,7 @@ return {
 				highlight = { backdrop = false },
 			},
 			search = {
-				enabled = true,
+				enabled = false,
 				jump_labels = false,
 			},
 		},
