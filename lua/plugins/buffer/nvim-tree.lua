@@ -8,6 +8,9 @@ return {
       sorter = "case_sensitive",
     },
     view = {
+      number = true,
+      relativenumber = true,
+      side = "right",
       width = 30,
     },
     renderer = {

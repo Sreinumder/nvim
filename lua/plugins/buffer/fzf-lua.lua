@@ -203,6 +203,7 @@ return {
               -- { mode = "n", "<leader>fac", "<cmd>FzfLua awesome_colorschemes<cr>", { desc = "find files" } },
               { mode = "n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", { desc = "buffer history" } },
               { mode = "n", "<leader>fw", "<cmd>FzfLua live_grep_native<CR>", { desc = "live grep" } },
+              {mode = "n", "<leader>fn", function() require'fzf-lua'.live_grep_native({ prompt="Notes> ", cwd="~/notes/" }) end,},
               -- { mode = "n", "<leader><leaderfw", "<cmd>FzfLua grep_last<CR>", { desc = "grep over last grep" } },
               -- { mode = "n", "<leader>frw", "<cmd>FzfLua live_grep_resume<CR>", { desc = "live grep resume" } },
 
@@ -234,7 +235,7 @@ return {
               { mode = "n", "<leader>ft", "<cmd>FzfLua treesitter<cr>", { desc = "treesitter" } },
               { mode = "n", "<leader>fk", "<cmd>FzfLua keymaps<cr>", { desc = "keymaps" } },
               { mode = "n", "<leader>fm", "<cmd>FzfLua marks<CR>", { desc = "find marks" } },
-              { mode = "n", "<leader>fr", "<cmd>FzfLua register<CR>", { desc = "find register" } },
+              { mode = "n", "<leader>fr", "<cmd>FzfLua registers<CR>", { desc = "find registers" } },
               { mode = "n", "<leader>fM", "<cmd>FzfLua manpages<CR>", { desc = "man page" } },
               { mode = "n", "<leader>fh", "<cmd>FzfLua help_tags<CR>", { desc = "help page" } },
               { mode = "n", "z=", "<cmd>FzfLua spell_suggest<CR>", { desc = "suggest_spell" } },

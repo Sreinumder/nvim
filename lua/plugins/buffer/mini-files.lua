@@ -1,49 +1,58 @@
 return {
   "echasnovski/mini.files",
   keys = {
-    { "<leader>ee", function() require('mini.files').setup() end }
+    { "<A-Space>", function()  
+      if not MiniFiles.close() then MiniFiles.open() end
+    end , {desc= "mini.file"}},
+    { "-", function() 
+      local buffer_path = vim.api.nvim_buf_get_name(0)
+      local parent_directory = vim.fn.fnamemodify(buffer_path, ":h") 
+      print(parent_directory)
+      require('mini.files').open(parent_directory) end , {desc= "mini.file"}
+    },
   },
-  opts = {
-    content = {
-      filter = nil, -- What prefix to show to the left of file system entry
-      prefix = nil, -- In which order to show file system entries
-      sort = nil,
-    },
+  opts = function()
+    vim.api.nvim_create_autocmd('User', {
+      pattern = 'MiniFilesWindowUpdate',
+      callback = function(args) 
+        vim.wo[args.data.win_id].relativenumber = true 
+        vim.wo[args.data.win_id].number = true 
+      end,
+    })
+    return {
+      content = { prefix = function() end },
+      mappings = {
+        close       = '<ESC>',
+        -- go_in       = '<A-l>',
+        go_in       = '<A-l>',
+        go_in_plus  = '<CR>',
+        -- go_out      = '<A-h>',
+        go_out      = '-',
+        go_out_plus = '<A-h>',
+        mark_goto   = "'",
+        mark_set    = 'm',
+        reset       = '<BS>',
+        reveal_cwd  = '@',
+        show_help   = 'g?',
+        synchronize = '<leader><A-Space>',
+        trim_left   = '<',
+        trim_right  = '>',
+      },
 
-    mappings = {
-      close       = 'q',
-      go_in       = 'l',
-      go_in_plus  = 'L',
-      go_out      = 'h',
-      go_out_plus = 'H',
-      mark_goto   = "'",
-      mark_set    = 'm',
-      reset       = '<BS>',
-      reveal_cwd  = '@',
-      show_help   = 'g?',
-      synchronize = '=',
-      trim_left   = '<',
-      trim_right  = '>',
-    },
+      -- General options
+      options = { -- Whether to delete permanently or move into module-specific trash
+        permanent_delete = true, -- Whether to use for editing directories
+        use_as_default_explorer = true,
+      },
 
-    -- General options
-    options = { -- Whether to delete permanently or move into module-specific trash
-      permanent_delete = true, -- Whether to use for editing directories
-      use_as_default_explorer = true,
-    },
-
-    -- Customization of explorer windows
-    windows = {
-      -- Maximum number of windows to show side by side
-      max_number = math.huge,
-      -- Whether to show preview of file/directory under cursor
-      preview = false,
-      -- Width of focused window
-      width_focus = 50,
-      -- Width of non-focused window
-      width_nofocus = 15,
-      -- Width of preview window
-      width_preview = 25,
-    },
-  }
+      -- Customization of explorer windows
+      windows = {
+        max_number = math.huge,
+        preview = true,
+        width_focus = 50,
+        width_nofocus = 15,
+        width_preview = 25,
+      },
+    }
+  end,
 }

@@ -21,8 +21,8 @@ return {
 		{ "<Tab>", "<Cmd>BufferNext<CR>", { desc = "buffer next" } },
 		{ "`", "<Cmd>BufferNext<CR>", { desc = "buffer next" } },
 		{ "<S-Tab>", "<Cmd>BufferPrevious<CR>", { desc = "buffer prev" } },
-		{ "<leader>j", "<Cmd>BufferNext<CR>", { desc = "buffer right" } },
-		{ "<leader>k", "<Cmd>BufferPrevious<CR>", { desc = "buffer left" } },
+		-- { "<leader>j", "<Cmd>BufferNext<CR>", { desc = "buffer right" } },
+		-- { "<leader>k", "<Cmd>BufferPrevious<CR>", { desc = "buffer left" } },
 		{ "<C-A-Tab>", "<Cmd>BufferMoveNext<CR>", { desc = "buffer move right" } },
 		{ "<C-A-S-Tab>", "<Cmd>BufferMovePrevious<CR>", { desc = "buffer move left" } },
 		{ "<A-w>", "<Cmd>BufferWipeout<CR>", { desc = "buffer close" } },
@@ -36,10 +36,6 @@ return {
 		{ "<leader>2", "<Cmd>BufferGoto 2<CR>", { desc = "goto tab 2" } },
 		{ "<leader>3", "<Cmd>BufferGoto 3<CR>", { desc = "goto tab 3" } },
 		{ "<leader>4", "<Cmd>BufferGoto 4<CR>", { desc = "goto tab 4" } },
-		-- { "<localleader>b", "<Cmd>BufferPin<CR>", { desc = "buffer pin" } },
-		-- { "<leader>b", "<Cmd>BufferGotoPinned<CR>", { desc = "buffer pinned" } },
-		-- { "<localleader>bpp", "<Cmd>BufferGotoUnpinned<CR>", { desc = "buffer unpinned" } },
-
 		--            :BufferCloseAllButCurrent
 		--            :BufferCloseAllButVisible
 		--            :BufferCloseAllButPinned

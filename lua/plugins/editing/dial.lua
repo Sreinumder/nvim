@@ -139,6 +139,15 @@ return {
 			{ "<leader>ip", "<leader>up", "g<leader>ip", "g<leader>up" }, -- "parenthesis
 			{ "<leader>iq", "<leader>uq", "g<leader>iq", "g<leader>uq" }, -- "quote",
 			{ "<leader>is", "<leader>us", "g<leader>is", "g<leader>us" }, -- "notes",
+			-- { ">u", "<u", "g>u", "g<u" }, -- "number"
+			-- { ">d", "<d", "g>d", "g<d" }, -- "date",
+			-- { ">t", "<t", "g>t", "g<t" }, -- "time",
+			-- { ">w", "<w", "g>w", "g<w" }, -- "word",
+			-- { ">a", "<a", "g>a", "g<a" }, -- "alpha
+			-- { ">l", "<l", "g>l", "g<l" }, -- "logical
+			-- { ">p", "<p", "g>p", "g<p" }, -- "parenthesis
+			-- { ">q", "<q", "g>q", "g<q" }, -- "quote",
+			-- { ">s", "<s", "g>s", "g<s" }, -- "notes",
 		}
 		for j = 1, #group do
 			for i = 0, 7 do

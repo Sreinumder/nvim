@@ -2,7 +2,7 @@ return {
 	"folke/which-key.nvim",
 	-- keys = { "<Space>", "<c-w>", '"', "'", "`", "v", "g" },
   keys = {
-    { ",wk", function()
+    { "<leader>,wk", function()
       local wk = require("which-key")
       if wk.is_open then
         wk.is_open = false -- Close the which-key window

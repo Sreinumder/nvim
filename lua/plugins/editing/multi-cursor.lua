@@ -19,14 +19,14 @@ return {
 			},
 			{
 				mode = { "n", "v" },
-				"<C-A-S-K>",
+				"<leader><C-A-K>",
 				function()
 					mc.lineSkipCursor(-1)
 				end,
 			},
 			{
 				mode = { "n", "v" },
-				"<C-A-S-J>",
+				"<leader><C-A-J>",
 				function()
 					mc.lineSkipCursor(1)
 				end,
@@ -73,8 +73,8 @@ return {
 			},
 
 			-- Rotate the main cursor.
-			{ mode = { "n", "v" }, "<C-A-h>", mc.prevCursor },
-			{ mode = { "n", "v" }, "<C-A-l>", mc.nextCursor },
+			{ mode = { "n", "v" }, "<A-[>", mc.prevCursor },
+			{ mode = { "n", "v" }, "<A-]>", mc.nextCursor },
 
 			-- Delete the main cursor.
 			{ mode = { "n", "v" }, "<C-A-x>", mc.deleteCursor },
@@ -130,14 +130,14 @@ return {
 			-- Rotate visual selection contents.
 			{
 				mode = "v",
-				"<leader>T",
+				"<A-(",
 				function()
 					mc.transposeCursors(-1)
 				end,
 			},
 			{
 				mode = "v",
-				"<leader>t",
+				"<A-)",
 				function()
 					mc.transposeCursors(1)
 				end,
