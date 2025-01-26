@@ -1,7 +1,6 @@
 local map = vim.keymap.set
 local nomap = vim.keymap.del
 if not vim.g.vscode then
-	map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
 end
 
 -- clever j k
@@ -42,12 +41,12 @@ map("n", "<leader>L", "<cmd>Lazy<CR>", { desc = "Lazy nvim" })
 map({ "n", "x" }, "<leader>*", "*``cgn", { desc = "replace word" })
 
 -- cd to things
-map("n", "<leader>cdh", "<cmd>cd ..<CR>", { desc = "cd .." })
-map("n", "<leader>cdf", "<cmd>lcd %:p:h<cr><cmd>pwd<cr>", { desc = "cd to buf" })
-map("n", "<leader>cdp", "<cmd>lcd ~/.config/nvim/lua/plugins<cr>", { desc = "cd to conn" })
-map("n", "<leader>cdr", "<cmd>lcd ~<cr>", { desc = "cd to ~" })
-map("n", "<leader>cdn", "<cmd>lcd ~/notes<cr>", { desc = "cd to notes" })
-map("n", "<leader>cdg", function()
+map("n", "<leader>dh", "<cmd>cd ..<CR>", { desc = "cd .." })
+map("n", "<leader>df", "<cmd>lcd %:p:h<cr><cmd>pwd<cr>", { desc = "cd to buf" })
+map("n", "<leader>dp", "<cmd>lcd ~/.config/nvim/lua/plugins<cr>", { desc = "cd to conn" })
+map("n", "<leader>dr", "<cmd>lcd ~<cr>", { desc = "cd to ~" })
+map("n", "<leader>dn", "<cmd>lcd ~/notes<cr>", { desc = "cd to notes" })
+map("n", "<leader>dg", function()
 	local git_root = vim.fn.trim(vim.fn.system("git rev-parse --show-toplevel"))
 	if vim.fn.isdirectory(git_root) == 1 then
 		vim.cmd("cd " .. git_root)
@@ -57,9 +56,9 @@ map("n", "<leader>cdg", function()
 end, { desc = "Change directory to Git repository root" })
 
 -- vim default register to clipboard. usage: copy from vim to other: yy<leader><leader> <C-v>(in browser)
-map("n", "<leader><leader>", function() vim.fn.setreg('+', vim.fn.getreg('"')) end, {desc = 'vim reg to clipboard'})
+map({"n", "x"}, "<leader><leader>", function() vim.fn.setreg('+', vim.fn.getreg('"')) end, {desc = 'vim reg to clipboard'})
 -- clipboard to vim default register. usage: copy from browser to vim: <C-c>(in browser) <S-Space>p in vim
-map("n", "<S-Space>", function() vim.fn.setreg('"', vim.fn.getreg('+')) end, {desc = 'clipboard to vim reg'})
+map({"n", "x"}, "<S-Space>", function() vim.fn.setreg('"', vim.fn.getreg('+')) end, {desc = 'clipboard to vim reg'})
 
 -- delete with x d or D and cut with alt + x + d + D
 map({ "n", "x" }, "x", '"_x')
@@ -106,8 +105,6 @@ map("x", "<leader><A-K>", '"byO<esc>"bp==', { desc = "clone selection Up(v) to n
 -- map("n", "<A-v>", "vlh", { desc = "vi single char under cursor" })
 map("x", "gl", '"bdW"bP`[v`]', { desc = "move selection with W" })
 map("x", "gh", '"bdB"bP`[v`]', { desc = "move selection with b" })
-map("x", "<A-e>", '"bdE"bp`[v`]', { desc = "join two words" })
-
 map("x", "<A-H>", '"bd^"bP`[v`]', { desc = "move selection with H" })
 map("x", "<A-L>", '"bd$"bp`[v`]', { desc = "move selection with L" })
 map("x", "<A-g><A-g>", '"bdgg"bp`[v`]', { desc = "move selection with gg" })
@@ -139,7 +136,6 @@ map("i", "<C-k>", function() -- capitalize word
 end, { expr = true })
 map("i", "<C-l>", '<C-r>=expand("%:p:h") . "/" <CR>', { desc = "write file path" })
 
---- Emacs style
 map({ "i", "c", "t" }, "<A-h>", "<Left>", { desc = "Insert mode left" })
 map({ "i", "c", "t" }, "<A-j>", "<Down>", { desc = "Insert mode down" })
 map({ "i", "c", "t" }, "<A-k>", "<Up>", { desc = "Insert mode up" })
@@ -152,9 +148,7 @@ map("i", "<A-c>", "<esc>ciw", { desc = "change except the selection" })
 map("t", "<C-<ESC>", "<C-\\><C-n>", { desc = "exit in terminal mode" })
 
 -- toggle options
-map({ "n", "x" }, "<leader>,n", "<cmd>set number!<CR>", { desc = "Toggle number" })
-map({ "n", "x" }, "<leader>,r", "<cmd>set relativenumber!<CR>", { desc = "Toggle relative number" })
-map({ "n", "x" }, "<leader>,w", "<cmd>set wrap!<CR>", { desc = "Toggle wrap" })
+map({ "n", "x" }, "<leader>,wr", "<cmd>set wrap!<CR>", { desc = "Toggle wrap" })
 map({ "n", "x" }, "<leader>,sp", "<cmd>set spell!<CR>", { desc = "Toggle spell" })
 map({ "n", "x" }, "<leader>,cl", "<cmd>set cursorline!<CR>", { desc = "Toggle cursorline" })
 map({ "n", "x" }, "<leader>,ii", "<cmd>set list!<CR>", { desc = "Toggle invisible char" })
