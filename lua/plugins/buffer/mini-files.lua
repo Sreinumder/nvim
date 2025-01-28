@@ -3,7 +3,7 @@ return {
 	lazy = false,
 	keys = {
 		{
-			"<A-Space>",
+			"<leader><leader>",
 			function()
 				if not require("mini.files").close() then
 					require("mini.files").open()
@@ -57,7 +57,7 @@ return {
 				reset = "<BS>",
 				reveal_cwd = "@",
 				show_help = "g?",
-				synchronize = "<leader><A-Space>",
+				synchronize = "=",
 				trim_left = "<",
 				trim_right = ">",
 			},

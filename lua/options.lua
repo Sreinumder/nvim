@@ -1,6 +1,7 @@
 local o = vim.opt
 local g = vim.g
 
+o.formatoptions:remove "o"
 if not vim.g.vscode then
 	-- require("nvchad.oions")
 	-- Numbers
@@ -105,3 +106,5 @@ vim.g.loaded_node_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
+
+vim.g.neovide_transparency = 0.8
