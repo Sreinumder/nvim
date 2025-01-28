@@ -1,9 +1,10 @@
 return {
 	"echasnovski/mini.diff",
-	-- event = "UIEnter",
-  keys = {
-    {"<leader>,md", function() require("mini.diff").toggle(vim.api.nvim_get_current_buf()) end, {desc = "toggle minidiff"}}
-  },
+	event = "InsertEnter",
+  lazy = true,
+  -- keys = {
+  --   {"<leader>,md", function() require("mini.diff").toggle(vim.api.nvim_get_current_buf()) end, {desc = "toggle minidiff"}}
+  -- },
 	opts = {
 		view = {
       style = "sign",

@@ -1,101 +1,101 @@
 return {
 	"jake-stewart/multicursor.nvim",
-  enabled = false,
 	keys = function()
+		local mc = require("multicursor-nvim")
 		local M = {
 			{
 				mode = { "n", "v" },
 				"<C-A-k>",
 				function()
-					require("multicursor-nvim").lineAddCursor(-1)
+					mc.lineAddCursor(-1)
 				end,
 			},
 			{
 				mode = { "n", "v" },
 				"<C-A-j>",
 				function()
-					require("multicursor-nvim").lineAddCursor(1)
+					mc.lineAddCursor(1)
 				end,
 			},
 			{
 				mode = { "n", "v" },
 				"<leader><C-A-K>",
 				function()
-					require("multicursor-nvim").lineSkipCursor(-1)
+					mc.lineSkipCursor(-1)
 				end,
 			},
 			{
 				mode = { "n", "v" },
 				"<leader><C-A-J>",
 				function()
-					require("multicursor-nvim").lineSkipCursor(1)
+					mc.lineSkipCursor(1)
 				end,
 			},
 			{
 				mode = { "n", "v" },
 				"<C-A-p>",
 				function()
-					require("multicursor-nvim").matchAddCursor(-1)
+					mc.matchAddCursor(-1)
 				end,
 			}, -- Add or skip adding a new cursor by matching word/selection
 			{
 				mode = { "n", "v" },
 				"<C-A-p>",
 				function()
-					require("multicursor-nvim").matchSkipCursor(-1)
+					mc.matchSkipCursor(-1)
 				end,
 			},
 			{
 				mode = { "n", "v" },
 				"<C-A-8>",
 				function()
-					require("multicursor-nvim").matchAddCursor(1)
+					mc.matchAddCursor(1)
 				end,
 			},
 			{
 				mode = { "n", "v" },
 				"<C-A-S-8>",
 				function()
-					require("multicursor-nvim").matchSkipCursor(1)
+					mc.matchSkipCursor(1)
 				end,
 			},
 
-			{ mode = { "n", "v" }, "<C-A-/>", require("multicursor-nvim").matchAllAddCursors }, -- Add all matches in the document
+			{ mode = { "n", "v" }, "<C-A-/>", mc.matchAllAddCursors }, -- Add all matches in the document
 
 			-- You can also add cursors with any motion you prefer:
-			-- {mode="n", "<right>", function() require("multicursor-nvim").addCursor("w") end},
+			-- {mode="n", "<right>", function() mc.addCursor("w") end},
 			{
 				mode = "n",
 				"<leader><right>",
 				function()
-					require("multicursor-nvim").skipCursor("w")
+					mc.skipCursor("w")
 				end,
 			},
 
 			-- Rotate the main cursor.
-			{ mode = { "n", "v" }, "<A-[>", require("multicursor-nvim").prevCursor },
-			{ mode = { "n", "v" }, "<A-]>", require("multicursor-nvim").nextCursor },
+			{ mode = { "n", "v" }, "<A-[>", mc.prevCursor },
+			{ mode = { "n", "v" }, "<A-]>", mc.nextCursor },
 
 			-- Delete the main cursor.
-			{ mode = { "n", "v" }, "<C-A-x>", require("multicursor-nvim").deleteCursor },
+			{ mode = { "n", "v" }, "<C-A-x>", mc.deleteCursor },
 
 			-- Add and remove cursors with control + left click.
-			{ mode = "n", "<c-leftmouse>", require("multicursor-nvim").handleMouse },
+			{ mode = "n", "<c-leftmouse>", mc.handleMouse },
 
 			-- Easy way to add and remove cursors using the main cursor.
-			{ mode = { "n", "v" }, "<c-q>", require("multicursor-nvim").toggleCursor },
+			{ mode = { "n", "v" }, "<c-q>", mc.toggleCursor },
 
 			-- Clone every cursor and disable the originals.
-			{ mode = { "n", "v" }, "<leader><c-q>", require("multicursor-nvim").duplicateCursors },
+			{ mode = { "n", "v" }, "<leader><c-q>", mc.duplicateCursors },
 
       {
 				mode = "n",
 				"<C-esc>",
 				function()
-					if not require("multicursor-nvim").cursorsEnabled() then
-						require("multicursor-nvim").enableCursors()
-					elseif require("multicursor-nvim").hasCursors() then
-						require("multicursor-nvim").clearCursors()
+					if not mc.cursorsEnabled() then
+						mc.enableCursors()
+					elseif mc.hasCursors() then
+						mc.clearCursors()
 					else
 						-- Default <esc> handler.
 					end
@@ -105,47 +105,47 @@ return {
 				mode = "n",
 				";<esc>",
 				function()
-					if not require("multicursor-nvim").cursorsEnabled() then
-						require("multicursor-nvim").enableCursors()
-					elseif require("multicursor-nvim").hasCursors() then
-						require("multicursor-nvim").clearCursors()
+					if not mc.cursorsEnabled() then
+						mc.enableCursors()
+					elseif mc.hasCursors() then
+						mc.clearCursors()
 					else
 						-- Default <esc> handler.
 					end
 				end,
 			},
 
-			{ mode = "n", ";gv", require("multicursor-nvim").restoreCursors }, -- bring back cursors if you accidentally clear them
-			{ mode = "n", "<leader>ga", require("multicursor-nvim").alignCursors }, -- Align cursor columns.
+			{ mode = "n", ";gv", mc.restoreCursors }, -- bring back cursors if you accidentally clear them
+			{ mode = "n", "<leader>ga", mc.alignCursors }, -- Align cursor columns.
 
 			-- Split visual selections by regex.
 
 			-- Append/insert for each line of visual selections.
-			{ mode = "v", "I", require("multicursor-nvim").insertVisual },
-			{ mode = "v", "A", require("multicursor-nvim").appendVisual },
+			{ mode = "v", "I", mc.insertVisual },
+			{ mode = "v", "A", mc.appendVisual },
 
 			-- match new cursors within visual selections by regex.
-			{ mode = "v", "M", require("multicursor-nvim").matchCursors },
+			{ mode = "v", "M", mc.matchCursors },
 
 			-- Rotate visual selection contents.
 			{
 				mode = "v",
 				"<A-(",
 				function()
-					require("multicursor-nvim").transposeCursors(-1)
+					mc.transposeCursors(-1)
 				end,
 			},
 			{
 				mode = "v",
 				"<A-)",
 				function()
-					require("multicursor-nvim").transposeCursors(1)
+					mc.transposeCursors(1)
 				end,
 			},
 
 			-- Jumplist support
-			{ mode = { "v", "n" }, "<c-i>", require("multicursor-nvim").jumpForward },
-			{ mode = { "v", "n" }, "<c-o>", require("multicursor-nvim").jumpBackward },
+			{ mode = { "v", "n" }, "<c-i>", mc.jumpForward },
+			{ mode = { "v", "n" }, "<c-o>", mc.jumpBackward },
 		}
 		return M
 	end,
