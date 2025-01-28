@@ -6,6 +6,7 @@
 return {
 	"monaqa/dial.nvim",
 	event = "BufEnter",
+  enabled = false,
 	-- keys = { "<leader>", mode = { "n", "x" } },
 	config = function()
 		local augend = require("dial.augend")

@@ -1,9 +1,7 @@
 return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	event = "UIEnter",
 	keys = function()
-		local fzf = require("fzf-lua")
 		local Path = require("plenary.path")
 
 		-- Function to toggle enabled state in plugin file

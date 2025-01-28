@@ -1,6 +1,6 @@
 return {
 	"echasnovski/mini.files",
-	lazy = false,
+	lazy = true,
 	keys = {
 		{
 			"<leader><leader>",
