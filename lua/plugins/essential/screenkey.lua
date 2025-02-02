@@ -4,6 +4,6 @@ return {
     version = "*", -- or branch = "dev", to use the latest commit
     cmd = "Screenkey toggle",
     keys = {
-      {",sk", "<cmd>Screenkey toggle<CR>", {desc = "toggle screenkey"}}
+      {"<leader>,sk", "<cmd>Screenkey toggle<CR>", {desc = "toggle screenkey"}}
     }
 }

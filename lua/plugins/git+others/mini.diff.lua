@@ -1,14 +1,15 @@
 return {
 	"echasnovski/mini.diff",
-	event = "InsertEnter",
+  -- event = "InsertEnter",
+	event = "UIEnter",
   lazy = true,
   -- keys = {
   --   {"<leader>,md", function() require("mini.diff").toggle(vim.api.nvim_get_current_buf()) end, {desc = "toggle minidiff"}}
   -- },
 	opts = {
 		view = {
-      style = "sign",
-      -- style = "number",
+      -- style = "sign",
+      style = "number",
 			signs = { add = "│", change = "┃", delete = "-" },
 
 			-- Priority of used visualization extmarks

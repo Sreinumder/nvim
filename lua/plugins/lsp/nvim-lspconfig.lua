@@ -2,8 +2,8 @@ return {
 	"neovim/nvim-lspconfig",
 	dependencies = { "saghen/blink.cmp" },
 	enabled = true,
-	-- lazy = false,
-	event = "InsertEnter",
+	lazy = false,
+	-- event = "InsertEnter",
 	keys = {
 		{ "<leader>K", "K", { desc = "default K" } },
 		{

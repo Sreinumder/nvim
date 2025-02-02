@@ -7,7 +7,11 @@ return {
 	opts = {
 		keymap = { preset = 'super-tab' }, -- enter default
 		sources = {
-			default = { 'lsp', 'path', 'snippets', 'buffer' },
+			default = { 'lsp', 'path', 'snippets', 'buffer',
+        -- "avante_commands",
+        -- "avante_mentions",
+        -- "avante_files",
+    },
 			providers = {
 				lsp = {
             name = "[lsp]",
