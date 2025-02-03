@@ -1,4 +1,3 @@
-fjiejfieji
 # Always work in progress
 
 # Keymaps for My Config
@@ -29,7 +28,7 @@ Below is the explanation
 | Mode           | Layer               | Description                      | Plugin                                                                   |
 |----------------|---------------------|----------------------------------|--------------------------------------------------------------------------|
 | normal/visual  | None                | Character-wise-move              | builtin                                                                  |
-| normal/visual  | H/L                 | Non-whitespace-start/end of line | builtin                                                                  |
+| normal/visual  | H/L                 | Non-whitespace-start/end of line | keybinding                                                               |
 | normal/visual  | J/K                 | Default Join and Keywordprg      | builtin                                                                  |
 | normal/visual  | alt                 | Move line                        | **[mini.move](https://github.com/echasnovski/mini.move)**                |
 | visual         | Space + alt         | Move selection(new line)         | keybinding                                                               |
