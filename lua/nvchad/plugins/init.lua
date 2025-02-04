@@ -1,5 +1,5 @@
 return {
-	-- "nvim-lua/plenary.nvim",
+-- "nvim-lua/plenary.nvim",
 	{
 		"nvchad/base46",
 		event = "UIEnter",
@@ -10,6 +10,7 @@ return {
 
 	{
 		"nvchad/ui",
+    ranch = 'v2.0',
 		event = "UIEnter",
 		config = function()
 			require("nvchad")

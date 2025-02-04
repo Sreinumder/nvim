@@ -13,6 +13,7 @@ map({ "n", "x" }, "<A-p>", ",", { desc = "Up" })
 
 map("n", "<leader>w", "<C-w>", { desc = "window control" }) -- split window vertically
 map({ "n", "x" }, "<leader>r", '"', { desc = "register select" }) -- <leader>ra for a register
+map({ "n", "x" }, "<leader>rr", '"+', { desc = "register +" }) -- <leader>ra for a register
 map({ "n", "v", "o" }, "H", "^", { desc = "Beg of line" })
 map({ "n", "v", "o" }, "M", "gM", { desc = "Mid of Line" })
 map({ "n", "v", "o" }, "L", "g_", { desc = "End of Line" })
@@ -27,7 +28,7 @@ map("x", "g_", "$")
 map(
 	"n",
 	"<Esc>",
-	"<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
+	"<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-l><CR>",
 	{ desc = "Redraw / Clear hlsearch / Diff Update" }
 )
 map("x", "J", "j", { desc = "Disable annoying J " })
@@ -145,5 +146,5 @@ map({ "n", "x" }, "<leader>,ii", "<cmd>set list!<CR>", { desc = "Toggle invisibl
 -- ========================
 vim.cmd([[command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis | wincmd p | diffthis]])
 map("n", "<leader>sc", "<cmd>DiffOrig<CR>", { desc = "unsaved changes diff" })
-map('n', '<leader><leader>dt', ':windo diffthis<CR>', { noremap = true })
-map('n', '<leader><leader>do', ':windo diffoff<CR>', { noremap = true })
+-- map('n', '<leader><leader>dt', ':windo diffthis<CR>', { noremap = true })
+-- map('n', '<leader><leader>do', ':windo diffoff<CR>', { noremap = true })

@@ -1,11 +1,11 @@
 # Always work in progress
 
 To install neovim (0.10) and requirements:
-* Windows
+* Windows (powershell)
 ```powershell
 winget install neovim fzf fd git;
 ```
-* Arch-linux
+* Arch-linux (bash/zsh)
 ```bash
 pacman -S neovim fzf fd git gcc;
 ```
