@@ -1,5 +1,31 @@
 # Always work in progress
 
+To install neovim (0.10) and requirements:
+* Windows
+```powershell
+winget install neovim fzf fd git;
+```
+* Arch-linux
+```bash
+pacman -S neovim fzf fd git gcc;
+```
+or use package-manager of your linux distro.
+
+Clone this repo and make backup if already exist
+Windows:
+```powershell
+mv ~/AppData/local/nvim ~/nvim_backup
+git clone https://www.github.com/Sreinumder/nvim ~/AppData/local/nvim
+```
+
+Linux:
+```powershell
+mv ~/.config/nvim ~/nvim_backup
+git clone https://www.github.com/Sreinumder/nvim ~/.config/nvim
+```
+
+Now run `nvim`. It will attempt to clone all the plugin repositories.
+
 # Keymaps for My Config
 ## Summary
 - hjkl for basic char movement and alt + h or alt + jkl for moving line/selection.

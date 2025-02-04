@@ -1,7 +1,6 @@
 return {
 	'saghen/blink.cmp',
 	version = '*',
-	enabled = true,
 	-- event = "VeryLazy",
 	dependencies = {},
 	opts = {

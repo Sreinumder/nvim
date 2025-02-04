@@ -1,6 +1,6 @@
 return {
-	dir = "/home/rose/projects/personal/lua/oil-tree",
-	enabled = true,
+	dir = "./oil-tree",
+	enabled = false,
 	lazy = true,
 	opts = {},
 }

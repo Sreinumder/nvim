@@ -1,5 +1,5 @@
 return {
-	dir = "/home/rose/projects/personal/lua/file-tree-preview",
+	dir = "./file-tree-preview",
 	enabled = false,
 	lazy = false,
 	-- config = function()
