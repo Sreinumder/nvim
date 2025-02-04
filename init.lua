@@ -34,7 +34,6 @@ else
 			{ import = "plugins.editing" },
 			{ import = "plugins.essential" },
 			{ import = "plugins.treesitter" },
-			{ import = "plugins.my-plugins" },
 		}
 		require("lazy").setup(plugins, lazy_config)
 	end
