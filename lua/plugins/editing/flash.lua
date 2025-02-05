@@ -17,7 +17,7 @@ return {
           end,
 			},
 			search = {
-				enabled = true,
+				enabled = false,
 				jump_labels = false,
 			},
 		},

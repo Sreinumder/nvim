@@ -31,8 +31,8 @@ end
 -- o.mouse = "a"
 
 -- o.signcolumn = "yes"
--- o.splitbelow = true
--- o.splitright = true
+o.splitbelow = true
+o.splitright = true
 -- o.timeoutlen = 400
 o.undofile = true
 --
@@ -96,9 +96,6 @@ o.listchars = {
 	precedes = "❮",
 }
 
--- plugin parameters
-g.preserve_cursor_pos = true
-g.change_hl_duration = 200
 
 -- disable some default providers
 g.loaded_node_provider = 0

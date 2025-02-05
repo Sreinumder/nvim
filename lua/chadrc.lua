@@ -1,96 +1,89 @@
 local options = {
 	base46 = {
-		theme = "everblush",
-    hl_override = {
-      -- Override or add custom highlight groups
-      CursorLine = {
-        bg = "#1e2227", -- Dark gray background
-        underline = false, -- Add an underline
-        italic = false, -- Make the text italic
-      },
-      Search = {bg = "#607D8B"},
-      CurSearch = {bg = "#607D8B"},
-      IncSearch = {bg = "#607D8B"},
-    },
-    transparency = true,
-    theme_toggle = { "everblush", "one_light" },
-  },
---
-  ui = {
-    cmp = {
-      icons_left = false, -- only for non-atom styles!
-      lspkind_text = true,
-      style = "default", -- default/flat_light/flat_dark/atom/atom_colored
-      format_colors = {
-        tailwind = false, -- will work for css lsp too
-        icon = "󱓻",
-      },
-    },
+    theme = "everblush",
+		hl_override = {
+			-- Override or add custom highlight groups
+			CursorLine = {
+				bg = "#1e2227", -- Dark gray background
+				underline = false, -- Add an underline
+				italic = false, -- Make the text italic
+			},
+      CurSearch = { bg = "#607D8B" },
+			Search = { bg = "#607D8B" },
+			IncSearch = { bg = "#607D8B" },
+		},
+		transparency = false,
+		theme_toggle = { "everblush", "one_light" },
+	},
 
-    telescope = { style = "borderless" }, -- borderless / bordered
+	ui = {
+		cmp = {
+			icons_left = false, -- only for non-atom styles!
+			lspkind_text = true,
+			style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+			format_colors = {
+				tailwind = true, -- will work for css lsp too
+				icon = "󱓻",
+			},
+		},
 
-    statusline = {
-      enabled = true,
-      theme = "default",
-      separator_style = "block",
-      -- order = { "file", "git", "%=", "macro", "%=", "lsp_msg", "diagnostics", "lsp", "cwd" },
-      -- modules = {
-      --   macro = function()
-      --     local reg = vim.fn.reg_recording()
-      --     if reg == "" then
-      --       return " "
-      --     end -- not recording
-      --     return "rec @" .. reg .. " "
-      --   end,
-      --   curs = function()
-      --     local row, col = vim.api.nvim_win_get_cursor(0).unpack()
-      --     local filename = vim.fn.expand("%:t")
-      --     local total_lines = vim.api.nvim_buf_line_count(0)
-      --     local percentage = math.floor((row / total_lines) * 100)
-      --     return string.format("%s | Line %d/%d", filename, row, total_lines, percentage)
-      --   end,
-      -- },
-    },
+		telescope = { style = "borderless" }, -- borderless / bordered
 
-    -- lazyload it when there are 1+ buffers
-    tabufline = {
-      enabled = false,
-      lazyload = true,
-      order = { "treeOffset", "buffers", "tabs", "btns" },
-      modules = nil,
-    },
-  },
+		statusline = {
+			enabled = true,
+			theme = "default",
+			separator_style = "block",
+			order = { "file", "git", "%=", "macro", "lsp_msg", "%=", "lsp", "diagnostics" },
+			modules = {
+				macro = function()
+					local reg = vim.fn.reg_recording()
+					if reg == "" then
+						return " " -- not recording
+					end
+					return "rec @" .. reg .. " "
+				end,
+			},
+		},
 
-  nvdash = { load_on_startup = false },
+		-- lazyload it when there are 1+ buffers
+		tabufline = {
+			enabled = false,
+			lazyload = true,
+			order = { "treeOffset", "buffers", "tabs", "btns" },
+			modules = nil,
+		},
+	},
 
-  term = {
-    winopts = { number = false, relativenumber = false },
-    sizes = { sp = 0.48, vsp = 0.2, ["bo sp"] = 0.3, ["bo vsp"] = 0.2 },
-    float = {
-      relative = "editor",
-      row = 0.0,
-      col = 0.0,
-      width = 1.0,
-      height = 0.8,
-      border = "single",
-    },
-  },
+	nvdash = { load_on_startup = false },
 
-  lsp = { signature = true },
+	term = {
+		winopts = { number = false, relativenumber = false },
+		sizes = { sp = 0.48, vsp = 0.2, ["bo sp"] = 0.3, ["bo vsp"] = 0.2 },
+		float = {
+			relative = "editor",
+			row = 0.0,
+			col = 0.0,
+			width = 1.0,
+			height = 0.8,
+			border = "single",
+		},
+	},
 
-  cheatsheet = {
-    theme = "simple", -- simple/grid
-    excluded_groups = { "terminal (t)", "autopairs", "Nvim", "Opens" }, -- can add group name or with mode
-  },
+	lsp = { signature = false },
 
-  mason = { pkgs = {}, skip = {} },
+	cheatsheet = {
+		theme = "simple", -- simple/grid
+		excluded_groups = { "terminal (t)", "autopairs", "Nvim", "Opens" }, -- can add group name or with mode
+	},
 
-  colorify = {
-    enabled = false,
-    mode = "virtual", -- fg, bg, virtual
-    virt_text = "󱓻 ",
-    highlight = { hex = true, lspvars = true },
-  },
+	mason = { pkgs = {}, skip = {} },
+
+	colorify = {
+		enabled = false,
+		mode = "virtual", -- fg, bg, virtual
+		virt_text = "󱓻 ",
+		highlight = { hex = true, lspvars = true },
+	},
 }
 
 local status, chadrc = pcall(require, "chadrc")

@@ -10,7 +10,6 @@ return {
 
 	{
 		"nvchad/ui",
-    ranch = 'v2.0',
 		event = "UIEnter",
 		config = function()
 			require("nvchad")
