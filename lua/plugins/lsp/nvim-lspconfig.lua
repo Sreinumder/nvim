@@ -82,7 +82,7 @@ return {
 				pyright = {},
 				-- clangd = {},
 				-- css={}.
-				emmet = {},
+				emmet_ls = {},
 			},
 		},
 		config = function()

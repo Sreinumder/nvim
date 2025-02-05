@@ -8,6 +8,9 @@ local options = {
         underline = false, -- Add an underline
         italic = false, -- Make the text italic
       },
+      Search = {bg = "#607D8B"},
+      CurSearch = {bg = "#607D8B"},
+      IncSearch = {bg = "#607D8B"},
     },
     transparency = true,
     theme_toggle = { "everblush", "one_light" },
@@ -57,37 +60,37 @@ local options = {
       modules = nil,
     },
   },
---
---   nvdash = { load_on_startup = false },
---
---   term = {
---     winopts = { number = false, relativenumber = false },
---     sizes = { sp = 0.48, vsp = 0.2, ["bo sp"] = 0.3, ["bo vsp"] = 0.2 },
---     float = {
---       relative = "editor",
---       row = 0.0,
---       col = 0.0,
---       width = 1.0,
---       height = 0.8,
---       border = "single",
---     },
---   },
---
---   lsp = { signature = true },
---
---   cheatsheet = {
---     theme = "simple", -- simple/grid
---     excluded_groups = { "terminal (t)", "autopairs", "Nvim", "Opens" }, -- can add group name or with mode
---   },
---
---   mason = { pkgs = {}, skip = {} },
---
---   colorify = {
---     enabled = false,
---     mode = "virtual", -- fg, bg, virtual
---     virt_text = "󱓻 ",
---     highlight = { hex = true, lspvars = true },
---   },
+
+  nvdash = { load_on_startup = false },
+
+  term = {
+    winopts = { number = false, relativenumber = false },
+    sizes = { sp = 0.48, vsp = 0.2, ["bo sp"] = 0.3, ["bo vsp"] = 0.2 },
+    float = {
+      relative = "editor",
+      row = 0.0,
+      col = 0.0,
+      width = 1.0,
+      height = 0.8,
+      border = "single",
+    },
+  },
+
+  lsp = { signature = true },
+
+  cheatsheet = {
+    theme = "simple", -- simple/grid
+    excluded_groups = { "terminal (t)", "autopairs", "Nvim", "Opens" }, -- can add group name or with mode
+  },
+
+  mason = { pkgs = {}, skip = {} },
+
+  colorify = {
+    enabled = false,
+    mode = "virtual", -- fg, bg, virtual
+    virt_text = "󱓻 ",
+    highlight = { hex = true, lspvars = true },
+  },
 }
 
 local status, chadrc = pcall(require, "chadrc")
