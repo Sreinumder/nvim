@@ -73,11 +73,11 @@ return {
 			},
 
 			-- Rotate the main cursor.
-			{ mode = { "n", "v" }, "<A-[>", mc.prevCursor },
-			{ mode = { "n", "v" }, "<A-]>", mc.nextCursor },
+			{ mode = { "n", "v" }, ";k", mc.prevCursor },
+			{ mode = { "n", "v" }, ";j", mc.nextCursor },
 
 			-- Delete the main cursor.
-			{ mode = { "n", "v" }, "<C-A-x>", mc.deleteCursor },
+			{ mode = { "n", "v" }, ";cd", mc.deleteCursor },
 
 			-- Add and remove cursors with control + left click.
 			{ mode = "n", "<c-leftmouse>", mc.handleMouse },
@@ -115,7 +115,7 @@ return {
 				end,
 			},
 
-			{ mode = "n", ";gv", mc.restoreCursors }, -- bring back cursors if you accidentally clear them
+			{ mode = "n", ";g;", mc.restoreCursors }, -- bring back cursors if you accidentally clear them
 			{ mode = "n", "<leader>ga", mc.alignCursors }, -- Align cursor columns.
 
 			-- Split visual selections by regex.

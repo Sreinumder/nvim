@@ -79,7 +79,7 @@ return {
 			desc = "Toggle Flash Search",
 		},
 		{
-			"<leader>mj",
+			";*",
 			mode = { "n", "x" },
 			function()
 				require("flash").jump({
