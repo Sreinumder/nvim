@@ -39,6 +39,7 @@
   "mini.surround": { "branch": "main", "commit": "aa5e245829dd12d8ff0c96ef11da28681d6049aa" },
   "multicursor.nvim": { "branch": "main", "commit": "f454cac9d03ccaf20008f4793f05b159f5547e78" },
   "numb.nvim": { "branch": "master", "commit": "7f564e638d3ba367abf1ec91181965b9882dd509" },
+  "nvim-bqf": { "branch": "main", "commit": "ebb6d2689e4427452180f17c53f29f7e460236f1" },
   "nvim-genghis": { "branch": "main", "commit": "99ca8b9e6e6bae0899cc2902f4103204572ac8ee" },
   "nvim-lint": { "branch": "master", "commit": "789b7ada1b4f00e08d026dffde410dcfa6a0ba87" },
   "nvim-lspconfig": { "branch": "master", "commit": "66bc018936c6ff76beb75f89d986af6442db4001" },
