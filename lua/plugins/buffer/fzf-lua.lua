@@ -5,7 +5,7 @@ return {
 
 	keys = function()
 		local function zoxide_query()
-			local command = "zoxide query -ls"
+			local command = "zoxide query -l"
 			local handle = io.popen(command)
 			local result = handle:read("*a")
 			handle:close()

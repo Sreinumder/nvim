@@ -2,12 +2,12 @@ return {
 	"echasnovski/mini.operators",
 	dependencies = { "echasnovski/mini.ai" },
 	keys = {
-		{ "s", desc = "Substitute Operator" },
-		{ "gm", desc = "Multiply Operator" },
-		{ "<A-s>", desc = "Exchange Operator" },
-		{ "g=", desc = "Evaluate Operator" },
-    -- pain points solved
-    { "<A-s><A-s>", "V<A-s>", desc = "Exchange Operator line-wise", remap = true },
+		{ modes = { "n", "x" }, "s", desc = "Substitute Operator" },
+		{ modes = { "n", "x" }, "gm", desc = "Multiply Operator" },
+		{ modes = { "n", "x" }, "<A-s>", desc = "Exchange Operator" },
+		{ modes = { "n", "x" }, "g=", desc = "Evaluate Operator" },
+		-- pain points solved
+		{ "<A-s><A-s>", "V<A-s>", desc = "Exchange Operator line-wise", remap = true },
 		{ "S", "s$", desc = "Substitute to EoL", remap = true },
 		{ "gmM", "gm$", desc = "Multiply to EoL", remap = true },
 		{ "<A-S>", "<A-s>$", desc = "Exchange to EoL", remap = true },
@@ -16,10 +16,10 @@ return {
 	},
 	version = "*",
 	opts = {
-		evaluate = { prefix = "g=" },
+    replace = { prefix = "s" },
+    multiply = { prefix = "gm" },
 		exchange = { prefix = "<A-s>" },
-		multiply = { prefix = "gm" },
-		replace = { prefix = "s" },
+    evaluate = { prefix = "g=" },
 		sort = { prefix = "" },
 	},
 }
