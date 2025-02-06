@@ -4,7 +4,7 @@ return {
   -- event = "UIEnter",
 	cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
 	keys = {
-		{ "<leader>M", "<cmd>Mason<CR>", { desc = "Lazy nvim" } },
+		{ "<leader>M", "<cmd>Mason<CR>",  desc = "Lazy nvim"  },
 	},
 	opts = {
 		PATH = "skip",

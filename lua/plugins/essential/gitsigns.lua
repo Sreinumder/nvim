@@ -1,6 +1,6 @@
 return {
   "lewis6991/gitsigns.nvim",
-   event = "UIEnter",
+  event = "CursorMoved",
   keys = {
     {
       "]c",
@@ -11,7 +11,7 @@ return {
           require("gitsigns").nav_hunk("next")
         end
       end,
-      { desc = "next hunk/change" },
+       desc = "next hunk/change" ,
     },
     {
       "[c",
@@ -22,7 +22,7 @@ return {
           require("gitsigns").nav_hunk("prev")
         end
       end,
-      { desc = "prev hunk/change" },
+       desc = "prev hunk/change" ,
     },
     { "<localleader>hs", function() require("gitsigns").stage_hunk() end,  desc = "stage_hunk" , },
     { "<localleader>hr", function() require("gitsigns").reset_hunk() end,  desc = "reset_hunk" ,
@@ -48,7 +48,7 @@ return {
     -- toggle
     {"<leader>,b", function() require("gitsigns").toggle_current_line_blame() end,  desc = "toggle_line_blame" ,},
   },
- opts = function()
+  opts = function()
     local M = {
       signcolumn = false,
       numhl      = true, -- Toggle with `:Gitsigns toggle_numhl`
