@@ -24,8 +24,8 @@ return {
       end,
        desc = "prev hunk/change" ,
     },
-    { "<localleader>hs", function() require("gitsigns").stage_hunk() end,  desc = "stage_hunk" , },
-    { "<localleader>hr", function() require("gitsigns").reset_hunk() end,  desc = "reset_hunk" ,
+    { "<localleader>hs", function() require("gitsigns").stage_hunk() end,  desc = "stage_hunk"  },
+    { "<localleader>hr", function() require("gitsigns").reset_hunk() end,  desc = "reset_hunk" },
     { mode = { "v" }, "<localleader>hs", function()require("gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") })end,  desc = "stage_hunk" ,},
     { mode = { "v" }, "<localleader>hr", function()require("gitsigns").reset_hunk({ vim.fn.line("."), vim.fn.line("v") })end,  desc = "reset_hunk" , },
 
@@ -34,11 +34,11 @@ return {
     { "<localleader>br", function() require("gitsigns").reset_buffer() end,  desc = "reset_buffer" ,},
 
     -- blame
-    { "<localleader>hB", function() require("gitsigns").blame_line({ full = true }) end,  desc = "blame_line" , },
-    { "<localleader>hb", function() require("gitsigns").blame() end,  desc = "blame_line" , }, },
+    { "<localleader>hB", "<cmd>Gitsigns blame_line<CR>",  desc = "blame_line" , },
+    { "<localleader>hb", "<cmd>Gitsigns blame<CR>",  desc = "blame buffer" , },
 
     -- Diff
-    {"<localleader>td", function() require("gitsigns").toggle_deleted() end,  desc = "toggle_deleted" ,},
+    {"<localleader>ht", function() require("gitsigns").toggle_deleted() end,  desc = "toggle_deleted" ,},
     {"<localleader>hd", function() require("gitsigns").diffthis() end,  desc = "gitsigns_diffthis" ,},
     {"<localleader>hD", function() require("gitsigns").diffthis("~") end,  desc = "diffthis~" ,},
 

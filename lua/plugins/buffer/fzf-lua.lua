@@ -2,7 +2,6 @@ return {
 	"ibhagwan/fzf-lua",
 	version = "*",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-
 	keys = function()
 		local function zoxide_query()
 			local command = "zoxide query -l"
@@ -45,13 +44,15 @@ return {
 				function()
 					require("fzf-lua").live_grep_native({ prompt = "Notes> ", cwd = "~/notes/" })
 				end,
+        desc = "Notes"
 			},
 			{
 				mode = "n",
 				"<leader>fp",
 				function()
-					require("fzf-lua").live_grep_native({ prompt = "plugins> ", cwd = "~/.config/nvim/" })
+					require("fzf-lua").live_grep_native({ prompt = "plugins> ", cwd = vim.fn.stdpath("config") })
 				end,
+        desc = "nvim/plugin files"
 			},
 			-- { mode = "n", "<leader><leaderfw", "<cmd>FzfLua grep_last<CR>",  desc = "fzf grep over last grep"  },
 			-- { mode = "n", "<leader>frw", "<cmd>FzfLua live_grep_resume<CR>",  desc = "fzf live grep resume"  },
@@ -65,16 +66,13 @@ return {
 			{ mode = "n", "<M-Esc>", "<cmd>FzfLua resume<CR>",  desc = "fzf resume"  },
 
 			--cword
-			{ mode = "n", "<A-S-8>", "<cmd>FzfLua grep_cword<CR>",  desc = "fzf cword rg"  },
+			-- { mode = "n", "<A-S-8>", "<cmd>FzfLua grep_cword<CR>",  desc = "fzf cword rg"  },
 
 			-- misc
-			{ mode = "n", "<leader>fl", "<cmd>FzfLua lgrep_curbuf<CR>",  desc = "fzf find buffers"  },
-			{ mode = "n", "<leader><C-o>", "<cmd>FzfLua jumps<cr>",  desc = "fzf find jumplist"  },
-			{ mode = "n", "<leader>f<C-o>", "<cmd>FzfLua jumps<cr>",  desc = "fzf find jumplist"  },
 			{ mode = "n", "<leader>f:", "<cmd>FzfLua command_history<cr>",  desc = "fzf command_history"  },
+      { mode = "n", "<leader>f<C-o>", "<cmd>FzfLua jumps<cr>",  desc = "fzf find jumplist"  },
 			{ mode = "n", "<leader>f/", "<cmd>FzfLua search_history<CR>",  desc = "fzf search_history"  },
-			{ mode = "n", "<leader>:", "<cmd>FzfLua command_history<cr>",  desc = "fzf command_history"  },
-			{ mode = "n", "<leader>/", "<cmd>FzfLua search_history<CR>",  desc = "fzf search_history"  },
+			{ mode = "n", "<leader>fl", "<cmd>FzfLua lgrep_curbuf<CR>",  desc = "fzf find buffers"  },
 			{ mode = "n", "<leader>ft", "<cmd>FzfLua treesitter<cr>",  desc = "fzf treesitter"  },
 			{ mode = "n", "<leader>fk", "<cmd>FzfLua keymaps<cr>",  desc = "fzf keymaps"  },
 			{ mode = "n", "<leader>fm", "<cmd>FzfLua marks<CR>",  desc = "fzf find marks"  },
@@ -85,7 +83,7 @@ return {
 
 			{ mode = "n", "<leader>z=", "<cmd>FzfLua spell_suggest<CR>",  desc = "fzf suggest_spell"  },
 			-- fzf git
-			{ mode = "n", "<leader>bb", "<cmd>FzfLua git_blame<CR>",  desc = "fzf git blame"  },
+			{ mode = "n", "<leader>gB", "<cmd>FzfLua git_blame<CR>",  desc = "fzf git blame"  },
 			{ mode = "n", "<leader>gf", "<cmd>FzfLua git_files<CR>",  desc = "fzf git files"  },
 			{ mode = "n", "<leader>fc", "<cmd>FzfLua git_bcommits<CR>",  desc = "fzf buffer commits"  },
 			{ mode = "n", "<leader>fC", "<cmd>FzfLua git_commits<CR>",  desc = "fzf git commits"  },

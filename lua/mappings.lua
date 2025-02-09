@@ -12,15 +12,9 @@ map({ "n", "x" }, "<A-n>", ";", { desc = "Basic Down" })
 map({ "n", "x" }, "<A-p>", ",", { desc = "Basic Up" })
 
 map("n", "<leader>w", "<C-w>", { desc = "Basic window control" }) -- split window vertically
-map({ "n", "x" }, "<leader>r", '"', { desc = "Basic register select" }) -- <leader>ra for a register
-map({ "n", "x" }, "<leader>rr", '"+', { desc = "Basic register +" }) -- <leader>ra for a register
 map({ "n", "v", "o" }, "H", "^", { desc = "Basic Beg of line" })
 map({ "n", "v", "o" }, "M", "gM", { desc = "Basic Mid of Line" })
 map({ "n", "v", "o" }, "L", "g_", { desc = "Basic End of Line" })
---and HML to start mid end of line <A-HML> to high middle low part of screen
-map("n", "<A-H>", "H", { desc = "Default H" })
-map("n", "<A-M>", "M", { desc = "Default M" })
-map("n", "<A-L>", "L", { desc = "Default L" })
 map("x", "$", "g_", { desc = "Default last non-white char" })
 map("x", "g_", "$")
 
@@ -32,10 +26,9 @@ map(
 	{ desc = "Basic Redraw / Clear hlsearch / Diff Update" }
 )
 map("x", "J", "j", { desc = "Disable annoying J " })
-map("n", "gV", "printf('`[%s`]', getregtype()[0])", { expr = true, desc = "true" }) -- Reselect last paste
 map("n", "<leader>gv", "printf('`[%s`]', getregtype()[0])", { expr = true, desc = "true" }) -- Reselect last paste
 map({ "o", "x" }, "i<space>", "iW") -- select WORD by i<space>
-map("n", "<leader>L", "<cmd>Lazy<CR>", { desc = "Lazy nvim" })
+map("n", "<leader>L", "<cmd>Lazy<CR>", { desc = "Lazy Menu" })
 
 -- cd to things
 map("n", "<leader>dh", "<cmd>cd ..<CR>", { desc = "cd .." })
@@ -61,8 +54,6 @@ map({ "n", "x" }, "X", '"_X')
 map({ "n", "x" }, "d", '"_d')
 map({ "n", "x" }, "D", '"_D')
 map({ "n", "x" }, "c", '"_c')
-map({ "n" }, "c", '"_c')
--- map({ "n", "x" }, "cc", '"_cc')
 map({ "n", "x" }, "C", '"_C')
 map({ "n", "x" }, "<A-x>", "x")
 map({ "n", "x" }, "<A-X>", "X")
@@ -96,7 +87,6 @@ map("x", "<leader><A-J>", '"byo<esc>"bp==', { desc = "clone selection Down(v) to
 map("x", "<leader><A-K>", '"byO<esc>"bp==', { desc = "clone selection Up(v) to new line" })
 
 -- move selection with vi motion of web(ge)/WEB(GE)/HML/gg/G
--- map("n", "<A-v>", "vlh", { desc = "vi single char under cursor" })
 map("x", "gl", '"bdW"bP`[v`]', { desc = "move selection with W" })
 map("x", "gh", '"bdB"bP`[v`]', { desc = "move selection with b" })
 map("x", "<A-H>", '"bd^"bP`[v`]', { desc = "move selection with H" })
@@ -116,7 +106,7 @@ map("i", ";", ";<c-g>u", {desc = "Insert-mode"})
 map("i", "<C-l>", '<C-r>=expand("%:p:h") . "/" <CR>', { desc = "Insert-mode file path" })
 
 
-map({ "i", "c", "t" }, "<A-:>", "<Esc>", { desc = "Insert-mode Escape" })
+map({ "i", "c", "t" }, "<A-;>", "<Esc>", { desc = "Insert-mode Escape" })
 map({ "i", "c", "t" }, "<C-a>", "<Home>", { desc = "Insert-mode Home" })
 map({ "i", "c", "t" }, "<C-e>", "<End>", { desc = "Insert-mode End" })
 map({ "i", "c", "t" }, "<A-h>", "<Left>", { desc = "Insert-mode left" })
@@ -126,6 +116,13 @@ map({ "i", "c", "t" }, "<A-l>", "<Right>", { desc = "Insert-mode Right" })
 map("c", "<C-A-K>", "\\(.*\\)", { desc = "Cmd-mode catching group/kirby " })
 
 map("t", "<C-<ESC>", "<C-\\><C-n>", { desc = "terminal exit" })
+
+-- easier commenting
+map({"n"}, "<leader>/", "gcc", { remap = true, silent = true, desc = "comment"  })
+map({"n","x"}, "<leader>c", "gc", { remap = true, silent = true, desc = "comment"  })
+map({"n","x"}, "<leader>cv", "gcgc", { remap = true, silent = true, desc = "comment toggle comment body"})
+map("n", "<leader>co", "Ox<ESC>gcc$xa", { remap = true, silent = true, desc = "comment above" })
+map("n", "<leader>ca", "ox<ESC>gcc$xkJA", { remap = true, silent = true, desc = "comment at end" })
 
 -- toggle options
 map({ "n", "x" }, "<leader>,wr", "<cmd>set wrap!<CR>", { desc = "Toggle wrap" })
@@ -144,6 +141,6 @@ map({ "n", "x" }, "<leader>,ii", "<cmd>set list!<CR>", { desc = "Toggle invisibl
 -- Diff mappings
 -- ========================
 vim.cmd([[command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis | wincmd p | diffthis]])
-map("n", "<leader>sc", "<cmd>DiffOrig<CR>", { desc = "diff unsaved changes" })
+-- map("n", "<leader>sc", "<cmd>DiffOrig<CR>", { desc = "diff unsaved changes" })
 -- map('n', '<leader><leader>dt', ':windo diffthis<CR>', { noremap = true })
 -- map('n', '<leader><leader>do', ':windo diffoff<CR>', { noremap = true })
