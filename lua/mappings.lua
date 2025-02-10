@@ -118,24 +118,12 @@ map("c", "<C-A-K>", "\\(.*\\)", { desc = "Cmd-mode catching group/kirby " })
 map("t", "<C-<ESC>", "<C-\\><C-n>", { desc = "terminal exit" })
 
 -- easier commenting
-map({"n"}, "<leader>/", "gcc", { remap = true, silent = true, desc = "comment"  })
+map({"n","x"}, "<leader>/", "gcc", { remap = true, silent = true, desc = "comment"  })
+map({"n","x"}, "<C-/>", "gcc", { remap = true, silent = true, desc = "comment"  })
 map({"n","x"}, "<leader>c", "gc", { remap = true, silent = true, desc = "comment"  })
 map({"n","x"}, "<leader>cv", "gcgc", { remap = true, silent = true, desc = "comment toggle comment body"})
 map("n", "<leader>co", "Ox<ESC>gcc$xa", { remap = true, silent = true, desc = "comment above" })
 map("n", "<leader>ca", "ox<ESC>gcc$xkJA", { remap = true, silent = true, desc = "comment at end" })
-
--- toggle options
-map({ "n", "x" }, "<leader>,wr", "<cmd>set wrap!<CR>", { desc = "Toggle wrap" })
-map({ "n", "x" }, "<leader>,sp", "<cmd>set spell!<CR>", { desc = "Toggle spell" })
-map({ "n", "x" }, "<leader>,cl", "<cmd>set cursorline!<CR>", { desc = "Toggle cursorline" })
-map({ "n", "x" }, "<leader>,ii", "<cmd>set list!<CR>", { desc = "Toggle invisible char" })
--- map({ "n", "x" }, "<leader>,ct", function()
---   if vim.opt.background:get() == "dark" then
--- 		vim.cmd(":set bg=light")
--- 	else
--- 		vim.cmd(":set bg=dark")
--- 	end
--- end, { desc = "Toggle colorscheme bg" })
 
 -- ========================
 -- Diff mappings

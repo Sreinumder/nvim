@@ -1,7 +1,7 @@
 local options = {
 	base46 = {
-    -- theme = "everblush",
-    theme = "onedark",
+    theme = "everblush",
+    -- theme = "onedark",
 		hl_override = {
 			CursorLine = {
 				bg = "#1e2227", -- Dark gray background
@@ -12,7 +12,7 @@ local options = {
 			Search = { bg = "#607D8B" },
 			IncSearch = { bg = "#607D8B" },
 		},
-		transparency = true,
+		transparency = false,
 		theme_toggle = { "everblush", "one_light" },
 	},
   lsp = { signature = true },

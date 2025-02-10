@@ -1,6 +1,7 @@
 return {
 	"nvim-treesitter/nvim-treesitter-context",
 	-- event = "UIEnter",
+  cmd = "TSContextToggle",
 	opts = {
 		multiwindow = false, -- Enable multiwindow support.
 		max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.

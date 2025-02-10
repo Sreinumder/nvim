@@ -7,6 +7,7 @@ return {
     triggers = {
       {";", mode = "nxso"},
       {"g", mode = "nxso"},
+      {"<leader>,", mode = "nxso"},
       {"<leader>s", mode = "nxso"},
       {"<leader>e", mode = "nxso"},
       {"<leader>y", mode = "nxso"},
@@ -43,6 +44,7 @@ return {
         { "<leader>t", group = "translate" },
         { "<leader>u", group = "decrement", icon = { icon = "- " }},
         { "<leader>y", group = "yank"},
+        { "<leader>,", group = "toggle"},
         { "g<leader>", group = "increment/decrement"},
         { "g<leader>i", group = "increment", icon = { icon = "g+ " }},
         { "g<leader>u", group = "decrement", icon = { icon = "g- " }},

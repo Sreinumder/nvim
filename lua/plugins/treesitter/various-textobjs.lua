@@ -45,12 +45,12 @@ return {
 			-- { mode = { "o", "x" }, "iu", '<cmd>lua require("various-textobjs").number("inner")<CR>' },
 			{ mode = { "o", "x" }, "m", '<cmd>lua require("various-textobjs").chainMember("outer")<CR>' },
 			{ mode = { "o", "x" }, "ij", '<cmd>lua require("various-textobjs").column()<CR>' },
-			{ mode = { "o", "x" }, "IR", '<cmd>lua require("various-textobjs").restOfIndentation()<CR>' },
+			{ mode = { "o", "x" }, "ir", '<cmd>lua require("various-textobjs").restOfIndentation()<CR>' },
 			{
 				mode = { "o", "x" },
 				"ii",
 				"<cmd>lua require('various-textobjs').indentation('inner', 'inner')<CR>",
-				 desc = "inner-inner indentation textobj" ,
+				desc = "inner-inner indentation textobj",
 			},
 			{
 				mode = { "o", "x" },
@@ -63,11 +63,10 @@ return {
 						require("various-textobjs").indentation("outer", "outer")
 					end
 				end,
-				 desc = "outer-inner indentation textobj" ,
+				desc = "outer-inner indentation textobj",
 			},
-			{ "dsi", delete_indentation,  desc = "Delete Surrounding Indentation"  },
-			{ "ysi", yank_surrounding,  desc = "Yank surrounding indentation"  },
-
+			{ "dsi", delete_indentation, desc = "Delete Surrounding Indentation" },
+			{ "ysi", yank_surrounding, desc = "Yank surrounding indentation" },
 			{ mode = { "o", "x" }, "is", '<cmd>lua require("various-textobjs").subword("inner")<CR>' },
 			{ mode = { "o", "x" }, "gx", '<cmd>lua require("various-textobjs").url()<CR>' },
 		}
