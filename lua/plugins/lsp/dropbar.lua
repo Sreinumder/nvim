@@ -4,6 +4,7 @@ return {
   keys = {
     { '<A-O>', function() require('dropbar.api').pick() end, desc = 'Pick symbols in winbar' },
     { '<A-o>', function() require('dropbar.api').select_next_context() end, desc = 'Select next context' },
+    { '<C->>', function() require('dropbar.api').select_next_context() end, desc = 'Select next context' },
     -- { '<A-o>', dropbar_api.goto_context_start, desc = 'Go to start of current context' },
   },
   opts = function()
