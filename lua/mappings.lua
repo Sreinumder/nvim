@@ -13,7 +13,7 @@ map({ "n", "x" }, "<A-p>", ",", { desc = "Basic Up" })
 
 map("n", "<leader>w", "<C-w>", { desc = "Basic window control" }) -- split window vertically
 map({ "n", "v", "o" }, "H", "^", { desc = "Basic Beg of line" })
-map({ "n", "v", "o" }, "M", "gM", { desc = "Basic Mid of Line" })
+-- map({ "n", "v", "o" }, "M", "gM", { desc = "Basic Mid of Line" })
 map({ "n", "v", "o" }, "L", "g_", { desc = "Basic End of Line" })
 map("x", "$", "g_", { desc = "Default last non-white char" })
 map("x", "g_", "$")
@@ -44,9 +44,9 @@ end, { desc = "cd to Git repository root" })
 
 -- clipboard management
 -- clipboard to vim default register. usage: copy from browser to vim: <C-c>(in browser) <S-Space>p in vim
-map({"n", "x"}, "<", function() vim.fn.setreg('"', vim.fn.getreg('+')) end, {desc = 'hack clipboard to vim reg'})
+map({"n", "x"}, ",", function() vim.fn.setreg('"', vim.fn.getreg('+')) end, {desc = 'hack clipboard to vim reg'})
 -- vim default register to clipboard. usage: copy from vim to other: yy<leader><leader> <C-v>(in browser)
-map({"n", "x"}, ">", function() vim.fn.setreg('+', vim.fn.getreg('"')) end, {desc = 'hack vim reg to clipboard'})
+map({"n", "x"}, "<", function() vim.fn.setreg('+', vim.fn.getreg('"')) end, {desc = 'hack vim reg to clipboard'})
 
 -- delete with x d or D and cut with alt + x, alt + d, alt + D, alt + c
 map({ "n", "x" }, "x", '"_x')
@@ -129,6 +129,6 @@ map("n", "<leader>ca", "ox<ESC>gcc$xkJA", { remap = true, silent = true, desc = 
 -- Diff mappings
 -- ========================
 vim.cmd([[command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis | wincmd p | diffthis]])
--- map("n", "<leader>sc", "<cmd>DiffOrig<CR>", { desc = "diff unsaved changes" })
+-- map("n", "<leader>sc", "<cmd>DiffOrig<CR>", { desc = "diff unsaved changes" }) -- this is <C-k> + d in vscode
 -- map('n', '<leader><leader>dt', ':windo diffthis<CR>', { noremap = true })
 -- map('n', '<leader><leader>do', ':windo diffoff<CR>', { noremap = true })

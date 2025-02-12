@@ -24,8 +24,6 @@ return {
 			})
 		end
 
-		local fzf = require("fzf-lua")
-
 		local options = {
 			{ name = "Wrap", cmd = "set wrap!" },
       { name = "Spellcheck", cmd = "set spell!" },
@@ -67,7 +65,7 @@ return {
 		}
 
 		local function toggle_option()
-			fzf.fzf_exec(
+			require("fzf-lua").fzf_exec(
 				vim.tbl_map(function(opt)
 					return opt.name
 				end, options),

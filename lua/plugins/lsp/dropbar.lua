@@ -66,7 +66,7 @@ return {
       }
     }
   end,
-  init = function()
-    vim.api.nvim_set_hl(0, 'DropBarMenuCurrentContext', { link = 'Visual' })
-  end,
+  -- init = function()
+  --   vim.api.nvim_set_hl(0, 'DropBarMenuCurrentContext', { link = 'Visual' })
+  -- end,
 }
