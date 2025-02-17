@@ -42,7 +42,7 @@ local options = {
 		excluded_groups = { "Default", ":help", "terminal (t)", "autopairs", "Nvim", "Opens" }, -- can add group name or with mode
 	},
   nvdash = { load_on_startup = false },
-	colorify = { enabled = true, mode = "bg",
+	colorify = { enabled = false, mode = "bg",
 		highlight = { hex = true, lspvars = true },
 	},
 }

@@ -51,7 +51,7 @@ return {
               end,
               desc = "Copy Path to Clipboard",
             },
-            ["g-"] = {
+            ["<leader>-"] = {
               function(state)
                 local node = state.tree:get_node()
                 local path = node:get_id()

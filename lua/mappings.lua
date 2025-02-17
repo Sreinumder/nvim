@@ -4,17 +4,17 @@ local map = vim.keymap.set
 -- end
 
 -- clever j k
-map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Basic Down", expr = true, silent = true })
-map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Basic Up", expr = true, silent = true })
-map({ "n", "x" }, "gj", "j", { desc = "Basic next line" })
-map({ "n", "x" }, "gk", "k", { desc = "Basic prev line" })
-map({ "n", "x" }, "<A-n>", ";", { desc = "Basic Down" })
-map({ "n", "x" }, "<A-p>", ",", { desc = "Basic Up" })
+map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
+map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
+map({ "n", "x" }, "gj", "j", { desc = "next line" })
+map({ "n", "x" }, "gk", "k", { desc = "prev line" })
+map({ "n", "x" }, "<A-n>", ";", { desc = "Down" })
+map({ "n", "x" }, "<A-p>", ",", { desc = "Up" })
 
-map("n", "<leader>w", "<C-w>", { desc = "Basic window control" }) -- split window vertically
-map({ "n", "v", "o" }, "H", "^", { desc = "Basic Beg of line" })
--- map({ "n", "v", "o" }, "M", "gM", { desc = "Basic Mid of Line" })
-map({ "n", "v", "o" }, "L", "g_", { desc = "Basic End of Line" })
+map("n", "<leader>w", "<C-w>", { desc = "window control" }) -- split window vertically
+map({ "n", "v", "o" }, "H", "^", { desc = "Beg of line" })
+-- map({ "n", "v", "o" }, "M", "gM", { desc = "Mid of Line" })
+map({ "n", "v", "o" }, "L", "g_", { desc = "End of Line" })
 map("x", "$", "g_", { desc = "Default last non-white char" })
 map("x", "g_", "$")
 
@@ -23,29 +23,30 @@ map(
 	"n",
 	"<Esc>",
 	"<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-l><CR>",
-	{ desc = "Basic Redraw / Clear hlsearch / Diff Update" }
+	{ desc = "Redraw / Clear hlsearch / Diff Update" }
 )
 map("x", "J", "j", { desc = "Disable annoying J " })
-map("n", "<leader>gv", "printf('`[%s`]', getregtype()[0])", { expr = true, desc = "true" }) -- Reselect last paste
+map("n", "<leader>gv", "printf('`[%s`]', getregtype()[0])", { expr = true, desc = "reselect last paste" })
+map("n", "<leader>v", "V", {  desc = "Line select" })
 map({ "o", "x" }, "i<space>", "iW") -- select WORD by i<space>
 map("n", "<leader>L", "<cmd>Lazy<CR>", { desc = "Lazy Menu" })
 
 -- cd to things
-map("n", "<leader>dh", "<cmd>cd ..<CR>", { desc = "cd .." })
+map("n", "<leader>dh", "<cmd>cd ..<CR><cmd>pwd<cr>", { desc = "cd .." })
 map("n", "<leader>df", "<cmd>lcd %:p:h<cr><cmd>pwd<cr>", { desc = "cd to buf" })
 map("n", "<leader>dg", function()
 	local git_root = vim.fn.trim(vim.fn.system("git rev-parse --show-toplevel"))
 	if vim.fn.isdirectory(git_root) == 1 then
-		vim.cmd("cd " .. git_root)
+    vim.cmd("cd " .. git_root)
 	else
 		print("Not inside a Git repository")
 	end
 end, { desc = "cd to Git repository root" })
 
 -- clipboard management
--- clipboard to vim default register. usage: copy from browser to vim: <C-c>(in browser) <S-Space>p in vim
+-- clipboard to vim default register. usage: copy from browser to vim: <C-c>(in browser) ,p in vim
 map({"n", "x"}, ",", function() vim.fn.setreg('"', vim.fn.getreg('+')) end, {desc = 'hack clipboard to vim reg'})
--- vim default register to clipboard. usage: copy from vim to other: yy<leader><leader> <C-v>(in browser)
+-- vim default register to clipboard. usage: copy from vim to other: <y <C-v>(in browser)
 map({"n", "x"}, "<", function() vim.fn.setreg('+', vim.fn.getreg('"')) end, {desc = 'hack vim reg to clipboard'})
 
 -- delete with x d or D and cut with alt + x, alt + d, alt + D, alt + c
@@ -56,6 +57,7 @@ map({ "n", "x" }, "D", '"_D')
 map({ "n", "x" }, "c", '"_c')
 map({ "n", "x" }, "C", '"_C')
 map({ "n", "x" }, "<A-x>", "x")
+-- never used this actually tho but still here
 map({ "n", "x" }, "<A-X>", "X")
 map({ "n", "x" }, "<A-d>", "d")
 map({ "n", "x" }, "<A-D>", "D")
@@ -68,11 +70,11 @@ map({ "v", "x" }, "P", '"_dp')
 map({ "v", "x" }, "<A-p>", "p")
 map({ "v", "x" }, "<A-P>", "P")
 
--- paste, delete or (add/join empty line) below and above
+-- paste, or add line below
 map("n", "<leader>p", "m`o<ESC>p==``", { desc = "paste below current line(jump)" })
 map("n", "<leader>P", "m`O<ESC>p==``", { desc = "paste above current line(jump)" })
-map("n", "<A-a>", "printf('m`%so<ESC>``', v:count1)", { expr = true, desc = "insert line below" })
-map("n", "<A-i>", "printf('m`%sO<ESC>``', v:count1)", { expr = true, desc = "insert line above" })
+map("n", "<leader>o", "printf('m`%so<ESC>``', v:count1)", { expr = true, desc = "insert line below" })
+map("n", "<leader>O", "printf('m`%sO<ESC>``', v:count1)", { expr = true, desc = "insert line above" })
 
 -- clone sentences up and down
 map("n", "<A-J>", 'V"cy"cP==gv<Esc>', { desc = "clone line Down" })

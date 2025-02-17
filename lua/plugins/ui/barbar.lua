@@ -32,10 +32,10 @@ return {
 		{ "<A-W>", "<Cmd>BufferRestore<CR>",  desc = "buffer restore"  },
 		{ "<leader><tab>", "<Cmd>BufferPick<CR>",  desc = "buffer pick"  },
 		{ "<leader><A-w>", "<Cmd>BufferPickDelete<CR>",  desc = "buffer pick delete"  },
-		{ "<leader>1", "<Cmd>BufferGoto 1<CR>",  desc = "buffer 1"  },
-		{ "<leader>2", "<Cmd>BufferGoto 2<CR>",  desc = "buffer 2"  },
-		{ "<leader>3", "<Cmd>BufferGoto 3<CR>",  desc = "buffer 3"  },
-		{ "<leader>4", "<Cmd>BufferGoto 4<CR>",  desc = "buffer 4"  },
+		-- { "<leader>1", "<Cmd>BufferGoto 1<CR>",  desc = "buffer 1"  },
+		-- { "<leader>2", "<Cmd>BufferGoto 2<CR>",  desc = "buffer 2"  },
+		-- { "<leader>3", "<Cmd>BufferGoto 3<CR>",  desc = "buffer 3"  },
+		-- { "<leader>4", "<Cmd>BufferGoto 4<CR>",  desc = "buffer 4"  },
 		--            :BufferCloseAllButCurrent
 		--            :BufferCloseAllButVisible
 		--            :BufferCloseAllButPinned

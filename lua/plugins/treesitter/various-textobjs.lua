@@ -46,7 +46,7 @@ return {
 			-- { mode = { "o", "x" }, "iu", '<cmd>lua require("various-textobjs").number("inner")<CR>' },
 			{ mode = { "o", "x" }, "m", '<cmd>lua require("various-textobjs").chainMember("outer")<CR>' },
 			{ mode = { "o", "x" }, "ij", '<cmd>lua require("various-textobjs").column()<CR>' },
-			{ mode = { "o", "x" }, "ir", '<cmd>lua require("various-textobjs").restOfIndentation()<CR>' },
+			{ mode = { "o", "x" }, "iR", '<cmd>lua require("various-textobjs").restOfIndentation()<CR>' },
 			{
 				mode = { "o", "x" },
 				"ii",
